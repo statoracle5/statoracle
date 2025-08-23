@@ -107,15 +107,16 @@ const Pricing = () => {
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {plans.map((plan, index) => (
-              <ScrollAnimationWrapper key={index} delay={index * 200} animation="fade-up">
+              <ScrollAnimationWrapper key={index} delay={index * 250} animation="slide-rotate" resetOnScroll={true}>
                 <div 
-                  className={`relative card-elegant p-8 hover-lift animate-blur-in ${
-                    plan.popular ? 'ring-2 ring-accent shadow-[var(--shadow-glow)] scale-105' : ''
+                  className={`relative card-elegant p-8 hover-magnetic animate-cascade ${
+                    plan.popular ? 'ring-2 ring-accent shadow-[var(--shadow-glow)] scale-105 hover-rainbow' : 'hover-float'
                   }`}
+                  style={{ animationDelay: `${index * 0.3}s` }}
                 >
                   {plan.popular && (
-                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                      <div className="bg-accent text-accent-foreground px-6 py-2 rounded-full text-sm font-semibold">
+                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 animate-bounce-in" style={{ animationDelay: `${index * 0.4}s` }}>
+                      <div className="bg-accent text-accent-foreground px-6 py-2 rounded-full text-sm font-semibold text-shimmer">
                         Most Popular
                       </div>
                     </div>
@@ -124,36 +125,39 @@ const Pricing = () => {
                   <div className={`absolute inset-0 bg-gradient-to-br ${plan.gradient} rounded-2xl opacity-50`} />
                   
                   <div className="relative z-10">
-                    <div className="flex items-center justify-between mb-6">
+                    <div className="flex items-center justify-between mb-6 animate-flip-in" style={{ animationDelay: `${index * 0.35}s` }}>
                       <div className="flex items-center space-x-3">
-                        {plan.icon}
-                        <h3 className="text-2xl font-bold">{plan.name}</h3>
+                        <div className="animate-zoom-bounce" style={{ animationDelay: `${index * 0.4}s` }}>
+                          {plan.icon}
+                        </div>
+                        <h3 className="text-2xl font-bold animate-slide-up" style={{ animationDelay: `${index * 0.45}s` }}>{plan.name}</h3>
                       </div>
                     </div>
 
-                    <div className="mb-6">
+                    <div className="mb-6 animate-elastic-in" style={{ animationDelay: `${index * 0.5}s` }}>
                       <div className="flex items-baseline">
-                        <span className="text-5xl font-bold">{plan.price}</span>
+                        <span className="text-5xl font-bold text-shimmer">{plan.price}</span>
                         <span className="text-muted-foreground ml-2">/{plan.period}</span>
                       </div>
-                      <p className="text-muted-foreground mt-2">{plan.description}</p>
+                      <p className="text-muted-foreground mt-2 animate-fade-in-up" style={{ animationDelay: `${index * 0.55}s` }}>{plan.description}</p>
                     </div>
 
                     <div className="space-y-4 mb-8">
                       {plan.features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-center space-x-3">
-                          <Check className="w-5 h-5 text-accent flex-shrink-0" />
+                        <div key={featureIndex} className="flex items-center space-x-3 animate-wave-up" style={{ animationDelay: `${index * 0.6 + featureIndex * 0.05}s` }}>
+                          <Check className="w-5 h-5 text-accent flex-shrink-0 animate-bounce-in" style={{ animationDelay: `${index * 0.65 + featureIndex * 0.05}s` }} />
                           <span>{feature}</span>
                         </div>
                       ))}
                     </div>
 
                     <button 
-                      className={`w-full py-4 px-6 rounded-xl font-semibold transition-all duration-300 ${
+                      className={`w-full py-4 px-6 rounded-xl font-semibold transition-all duration-300 animate-box-reveal ${
                         plan.popular 
-                          ? 'btn-hero' 
-                          : 'btn-secondary hover:scale-105'
+                          ? 'btn-hero hover-rainbow' 
+                          : 'btn-secondary hover-float'
                       }`}
+                      style={{ animationDelay: `${index * 0.7}s` }}
                     >
                       {plan.popular ? 'Start Free Trial' : 'Get Started'}
                     </button>

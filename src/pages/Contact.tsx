@@ -227,14 +227,14 @@ const Contact = () => {
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {offices.map((office, index) => (
-              <ScrollAnimationWrapper key={index} delay={index * 200} animation="fade-up">
-                <div className="card-elegant p-8 text-center">
-                  <MapPin className="w-12 h-12 text-primary mx-auto mb-6" />
-                  <h3 className="text-2xl font-bold mb-4">{office.city}</h3>
-                  <div className="space-y-2 text-muted-foreground">
-                    <p>{office.address}</p>
-                    <p>{office.zipcode}</p>
-                    <p className="font-semibold text-foreground">{office.phone}</p>
+              <ScrollAnimationWrapper key={index} delay={index * 300} animation="elastic-in" resetOnScroll={true}>
+                <div className="card-elegant p-8 text-center hover-float animate-box-reveal" style={{ animationDelay: `${index * 0.2}s` }}>
+                  <MapPin className="w-12 h-12 text-primary mx-auto mb-6 animate-zoom-bounce" style={{ animationDelay: `${index * 0.25}s` }} />
+                  <h3 className="text-2xl font-bold mb-4 text-shimmer animate-slide-up" style={{ animationDelay: `${index * 0.3}s` }}>{office.city}</h3>
+                  <div className="space-y-2 text-muted-foreground animate-cascade" style={{ animationDelay: `${index * 0.35}s` }}>
+                    <p className="animate-fade-in-up" style={{ animationDelay: `${index * 0.4}s` }}>{office.address}</p>
+                    <p className="animate-fade-in-up" style={{ animationDelay: `${index * 0.45}s` }}>{office.zipcode}</p>
+                    <p className="font-semibold text-foreground animate-wave-up" style={{ animationDelay: `${index * 0.5}s` }}>{office.phone}</p>
                   </div>
                 </div>
               </ScrollAnimationWrapper>

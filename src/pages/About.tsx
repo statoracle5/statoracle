@@ -148,13 +148,13 @@ const About = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
-              <ScrollAnimationWrapper key={index} delay={index * 150} animation="fade-up">
-                <div className={`card-elegant text-center hover-lift stagger-${index + 1}`}>
-                  <div className="mb-6 flex justify-center animate-rotate-in">
+              <ScrollAnimationWrapper key={index} delay={index * 200} animation="flip-in" resetOnScroll={true}>
+                <div className={`card-elegant text-center hover-magnetic animate-cascade`} style={{ animationDelay: `${index * 0.2}s` }}>
+                  <div className="mb-6 flex justify-center animate-elastic-in" style={{ animationDelay: `${index * 0.25}s` }}>
                     {value.icon}
                   </div>
-                  <h3 className="text-xl font-semibold mb-4 animate-slide-up">{value.title}</h3>
-                  <p className="text-muted-foreground animate-blur-in">{value.description}</p>
+                  <h3 className="text-xl font-semibold mb-4 text-shimmer animate-slide-rotate" style={{ animationDelay: `${index * 0.3}s` }}>{value.title}</h3>
+                  <p className="text-muted-foreground animate-wave-up" style={{ animationDelay: `${index * 0.35}s` }}>{value.description}</p>
                 </div>
               </ScrollAnimationWrapper>
             ))}
@@ -176,12 +176,12 @@ const About = () => {
 
           <div className="grid md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
-              <ScrollAnimationWrapper key={index} delay={index * 100} animation="scale">
-                <div className="text-center">
-                  <div className="text-5xl md:text-6xl font-bold gradient-text mb-4">
+              <ScrollAnimationWrapper key={index} delay={index * 150} animation="zoom-bounce" resetOnScroll={true}>
+                <div className="text-center animate-box-reveal hover-float" style={{ animationDelay: `${index * 0.1}s` }}>
+                  <div className="text-5xl md:text-6xl font-bold gradient-text mb-4 text-shimmer animate-elastic-in" style={{ animationDelay: `${index * 0.15}s` }}>
                     {stat.number}
                   </div>
-                  <div className="text-lg text-muted-foreground">
+                  <div className="text-lg text-muted-foreground animate-slide-up" style={{ animationDelay: `${index * 0.2}s` }}>
                     {stat.label}
                   </div>
                 </div>

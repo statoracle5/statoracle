@@ -63,10 +63,12 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Floating Elements */}
-        <div className="absolute top-20 left-10 w-20 h-20 bg-primary/20 rounded-full blur-xl float" />
-        <div className="absolute bottom-20 right-10 w-32 h-32 bg-accent/20 rounded-full blur-xl float" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-secondary/20 rounded-full blur-xl float" style={{ animationDelay: '2s' }} />
+        {/* Floating Elements with Enhanced Animations */}
+        <div className="absolute top-20 left-10 w-20 h-20 bg-primary/20 rounded-full blur-xl float hover-rainbow" />
+        <div className="absolute bottom-20 right-10 w-32 h-32 bg-accent/20 rounded-full blur-xl float hover-rainbow" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-secondary/20 rounded-full blur-xl float hover-rainbow" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/3 right-1/4 w-24 h-24 bg-primary/15 rounded-full blur-xl float hover-rainbow" style={{ animationDelay: '1.5s' }} />
+        <div className="absolute bottom-1/3 left-1/3 w-14 h-14 bg-accent/15 rounded-full blur-xl float hover-rainbow" style={{ animationDelay: '0.5s' }} />
       </section>
 
       {/* Features Section */}
@@ -88,15 +90,16 @@ const Home = () => {
             {features.map((feature, index) => (
               <ScrollAnimationWrapper 
                 key={index} 
-                delay={index * 150}
-                animation="fade-up"
+                delay={index * 200}
+                animation="bounce-in"
+                resetOnScroll={true}
               >
-                <div className={`card-elegant text-center group hover-lift stagger-${index + 1}`}>
-                  <div className="mb-6 flex justify-center animate-rotate-in group-hover:scale-110 transition-transform duration-300">
+                <div className={`card-elegant text-center group hover-float animate-box-reveal`} style={{ animationDelay: `${index * 0.15}s` }}>
+                  <div className="mb-6 flex justify-center animate-zoom-bounce group-hover:scale-110 transition-transform duration-300" style={{ animationDelay: `${index * 0.2}s` }}>
                     {feature.icon}
                   </div>
-                  <h3 className="text-xl font-semibold mb-4 animate-slide-up">{feature.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed animate-blur-in">
+                  <h3 className="text-xl font-semibold mb-4 animate-slide-up" style={{ animationDelay: `${index * 0.25}s` }}>{feature.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed animate-fade-in-up" style={{ animationDelay: `${index * 0.3}s` }}>
                     {feature.description}
                   </p>
                 </div>
