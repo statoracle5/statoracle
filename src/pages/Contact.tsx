@@ -85,13 +85,13 @@ const Contact = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {contactMethods.map((method, index) => (
               <ScrollAnimationWrapper key={index} delay={index * 150} animation="fade-up">
-                <div className="card-elegant text-center group hover:scale-105 transition-transform duration-300">
-                  <div className="mb-6 flex justify-center">
+                <div className={`card-elegant text-center group hover-lift stagger-${index + 1}`}>
+                  <div className="mb-6 flex justify-center animate-rotate-in">
                     {method.icon}
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">{method.title}</h3>
-                  <p className="text-muted-foreground mb-4">{method.description}</p>
-                  <div className="text-sm font-medium mb-4">{method.contact}</div>
+                  <h3 className="text-xl font-semibold mb-2 animate-slide-up">{method.title}</h3>
+                  <p className="text-muted-foreground mb-4 animate-blur-in">{method.description}</p>
+                  <div className="text-sm font-medium mb-4 text-shimmer">{method.contact}</div>
                   <button className="btn-secondary w-full group-hover:scale-105 transition-transform duration-300">
                     {method.action}
                   </button>

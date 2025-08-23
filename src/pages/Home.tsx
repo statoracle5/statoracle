@@ -35,9 +35,9 @@ const Home = () => {
         <div className="container mx-auto px-6 py-20 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <ScrollAnimationWrapper>
-              <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+              <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-shimmer">
                 Elevate Youth Sports with{" "}
-                <span className="gradient-text">AI Vision</span>
+                <span className="gradient-text animate-pulse-glow">AI Vision</span>
               </h1>
             </ScrollAnimationWrapper>
             
@@ -91,12 +91,12 @@ const Home = () => {
                 delay={index * 150}
                 animation="fade-up"
               >
-                <div className="card-elegant text-center group">
-                  <div className="mb-6 flex justify-center group-hover:scale-110 transition-transform duration-300">
+                <div className={`card-elegant text-center group hover-lift stagger-${index + 1}`}>
+                  <div className="mb-6 flex justify-center animate-rotate-in group-hover:scale-110 transition-transform duration-300">
                     {feature.icon}
                   </div>
-                  <h3 className="text-xl font-semibold mb-4">{feature.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <h3 className="text-xl font-semibold mb-4 animate-slide-up">{feature.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed animate-blur-in">
                     {feature.description}
                   </p>
                 </div>

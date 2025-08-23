@@ -149,12 +149,12 @@ const About = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
               <ScrollAnimationWrapper key={index} delay={index * 150} animation="fade-up">
-                <div className="card-elegant text-center">
-                  <div className="mb-6 flex justify-center">
+                <div className={`card-elegant text-center hover-lift stagger-${index + 1}`}>
+                  <div className="mb-6 flex justify-center animate-rotate-in">
                     {value.icon}
                   </div>
-                  <h3 className="text-xl font-semibold mb-4">{value.title}</h3>
-                  <p className="text-muted-foreground">{value.description}</p>
+                  <h3 className="text-xl font-semibold mb-4 animate-slide-up">{value.title}</h3>
+                  <p className="text-muted-foreground animate-blur-in">{value.description}</p>
                 </div>
               </ScrollAnimationWrapper>
             ))}

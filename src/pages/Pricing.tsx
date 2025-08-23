@@ -109,7 +109,7 @@ const Pricing = () => {
             {plans.map((plan, index) => (
               <ScrollAnimationWrapper key={index} delay={index * 200} animation="fade-up">
                 <div 
-                  className={`relative card-elegant p-8 ${
+                  className={`relative card-elegant p-8 hover-lift animate-blur-in ${
                     plan.popular ? 'ring-2 ring-accent shadow-[var(--shadow-glow)] scale-105' : ''
                   }`}
                 >

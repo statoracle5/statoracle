@@ -6,39 +6,39 @@
 
 @layer base {
   :root {
-    /* Core Brand Colors - Sports Tech Palette */
-    --background: 210 40% 98%;
-    --foreground: 222 84% 4.9%;
+    /* Professional Dark Theme - Premium Sports Tech */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222 84% 4.9%;
+    --card: 240 10% 7%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 84% 4.9%;
+    --popover: 240 10% 7%;
+    --popover-foreground: 0 0% 98%;
 
-    /* Primary - Electric Blue */
-    --primary: 217 91% 60%;
+    /* Primary - Premium Blue */
+    --primary: 221 83% 53%;
     --primary-foreground: 0 0% 98%;
-    --primary-glow: 217 91% 70%;
+    --primary-glow: 221 83% 63%;
 
-    /* Secondary - Deep Teal */
-    --secondary: 180 100% 25%;
+    /* Secondary - Sophisticated Purple */
+    --secondary: 262 83% 58%;
     --secondary-foreground: 0 0% 98%;
 
-    /* Accent - Energetic Green */
-    --accent: 142 71% 45%;
+    /* Accent - Professional Cyan */
+    --accent: 199 89% 48%;
     --accent-foreground: 0 0% 98%;
 
     /* Muted */
-    --muted: 210 40% 96%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 240 5% 12%;
+    --muted-foreground: 240 5% 64.9%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 217 91% 60%;
+    --border: 240 5% 18%;
+    --input: 240 5% 15%;
+    --ring: 221 83% 53%;
 
     --radius: 0.75rem;
 
@@ -192,6 +192,57 @@
   .float {
     animation: float 3s ease-in-out infinite;
   }
+
+  /* Professional Animations */
+  .animate-slide-up {
+    @apply opacity-0 translate-y-16;
+    animation: slideUpPro 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-slide-in-diagonal {
+    @apply opacity-0 translate-x-16 translate-y-16;
+    animation: slideDiagonal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-rotate-in {
+    @apply opacity-0 rotate-12 scale-95;
+    animation: rotateIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-blur-in {
+    filter: blur(10px);
+    @apply opacity-0;
+    animation: blurIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  /* Hover Animations */
+  .hover-lift {
+    @apply transition-all duration-500 ease-out;
+    @apply hover:scale-105 hover:-translate-y-4 hover:shadow-[var(--shadow-glow)];
+  }
+
+  .hover-glow {
+    @apply transition-all duration-300;
+    @apply hover:shadow-[var(--shadow-glow)] hover:bg-gradient-to-r hover:from-primary/10 hover:via-secondary/10 hover:to-accent/10;
+  }
+
+  /* Text Animations */
+  .text-shimmer {
+    background: linear-gradient(90deg, hsl(var(--foreground)) 25%, hsl(var(--primary)) 50%, hsl(var(--foreground)) 75%);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 3s linear infinite;
+  }
+
+  /* Stagger animations */
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+  .stagger-5 { animation-delay: 0.5s; }
+  .stagger-6 { animation-delay: 0.6s; }
 }
 
 @keyframes fadeInUp {
@@ -228,5 +279,42 @@
   }
   50% {
     transform: translateY(-10px);
+  }
+}
+
+@keyframes slideUpPro {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDiagonal {
+  to {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+  }
+}
+
+@keyframes rotateIn {
+  to {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+@keyframes blurIn {
+  to {
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
   }
 }

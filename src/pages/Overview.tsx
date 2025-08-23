@@ -73,13 +73,13 @@ const Overview = () => {
             <ScrollAnimationWrapper animation="fade-left">
               <div className="space-y-8">
                 {capabilities.map((capability, index) => (
-                  <div key={index} className="flex items-start space-x-4 p-6 rounded-2xl hover:bg-muted/30 transition-colors duration-300">
-                    <div className="flex-shrink-0 p-3 bg-background rounded-xl shadow-md">
+                  <div key={index} className={`flex items-start space-x-4 p-6 rounded-2xl hover-glow transition-colors duration-300 animate-slide-in-diagonal stagger-${index + 1}`}>
+                    <div className="flex-shrink-0 p-3 bg-card rounded-xl shadow-md animate-rotate-in">
                       {capability.icon}
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold mb-2">{capability.title}</h3>
-                      <p className="text-muted-foreground">{capability.description}</p>
+                      <h3 className="text-xl font-semibold mb-2 animate-slide-up">{capability.title}</h3>
+                      <p className="text-muted-foreground animate-blur-in">{capability.description}</p>
                     </div>
                   </div>
                 ))}
