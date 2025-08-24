@@ -104,7 +104,7 @@ const Overview = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-gradient-to-b from-muted/20 to-background mb-20">
+      <section className="py-20 bg-gradient-to-b from-muted/20 to-background pb-32">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <ScrollAnimationWrapper animation="fade-left">

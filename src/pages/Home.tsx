@@ -7,22 +7,22 @@ const Home = () => {
     {
       icon: <Camera className="w-12 h-12 text-primary" />,
       title: "Computer Vision",
-      description: "Advanced AI-powered analysis of athletic performance through real-time video processing"
+      description: "State-of-the-art AI algorithms analyze video footage in real-time, tracking player movements, techniques, and performance metrics with unprecedented accuracy"
     },
     {
       icon: <BarChart3 className="w-12 h-12 text-accent" />,
       title: "Performance Analytics",
-      description: "Detailed insights and metrics to track improvement and identify areas for growth"
+      description: "Transform raw data into actionable insights with comprehensive dashboards, trend analysis, and personalized recommendations for each athlete's development"
     },
     {
       icon: <Users className="w-12 h-12 text-secondary" />,
       title: "Team Management",
-      description: "Comprehensive tools for coaches to manage teams and track player development"
+      description: "Streamline coaching workflows with powerful tools for roster management, training scheduling, progress tracking, and seamless communication across your entire organization"
     },
     {
       icon: <Trophy className="w-12 h-12 text-primary" />,
       title: "Competition Ready",
-      description: "Prepare athletes for peak performance with data-driven training insights"
+      description: "Gain the competitive edge with game preparation tools, opponent analysis, tactical insights, and performance optimization strategies that win championships"
     }
   ];
 
@@ -72,7 +72,7 @@ const Home = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-gradient-to-b from-background to-muted/30">
+      <section className="py-20 bg-gradient-to-b from-background to-muted/30 pb-32">
         <div className="container mx-auto px-6">
           <ScrollAnimationWrapper>
             <div className="text-center mb-16">

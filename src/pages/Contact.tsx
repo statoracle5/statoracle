@@ -214,7 +214,7 @@ const Contact = () => {
       </section>
 
       {/* Office Locations */}
-      <section className="py-20">
+      <section className="py-20 pb-32">
         <div className="container mx-auto px-6">
           <ScrollAnimationWrapper>
             <div className="text-center mb-16">
