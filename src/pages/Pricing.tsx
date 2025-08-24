@@ -40,6 +40,25 @@ const Pricing = () => {
       gradient: "from-accent/20 to-accent/10"
     },
     {
+      name: "Elite",
+      price: "$249",
+      period: "per month",
+      description: "Advanced features for competitive teams",
+      icon: <Crown className="w-8 h-8 text-secondary" />,
+      features: [
+        "Up to 50 athletes",
+        "Premium analytics suite",
+        "Video analysis (100 hours/month)",
+        "Advanced team management",
+        "Predictive insights",
+        "Custom dashboards",
+        "White-label options",
+        "Dedicated support line"
+      ],
+      popular: false,
+      gradient: "from-secondary/20 to-secondary/10"
+    },
+    {
       name: "Enterprise",
       price: "$399",
       period: "per month",
@@ -103,7 +122,7 @@ const Pricing = () => {
       </section>
 
       {/* Pricing Cards */}
-      <section className="py-20">
+      <section className="py-20 pb-32">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {plans.map((plan, index) => (
