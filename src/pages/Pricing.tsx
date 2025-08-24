@@ -126,10 +126,10 @@ const Pricing = () => {
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {plans.slice(0, 3).map((plan, index) => (
-              <ScrollAnimationWrapper key={index} delay={index * 150} animation="fade-up" resetOnScroll={false}>
+              <ScrollAnimationWrapper key={index} delay={index * 300} animation="slide-up" resetOnScroll={true}>
                 <div 
-                  className={`relative card-elegant p-6 hover-lift ${
-                    plan.popular ? 'ring-2 ring-accent shadow-[var(--shadow-glow)] scale-105' : ''
+                  className={`relative card-elegant p-6 hover-lift transform transition-all duration-500 ${
+                    plan.popular ? 'ring-2 ring-accent shadow-[var(--shadow-glow)] lg:scale-105' : ''
                   }`}
                 >
                   {plan.popular && (

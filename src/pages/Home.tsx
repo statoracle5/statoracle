@@ -91,15 +91,15 @@ const Home = () => {
               <ScrollAnimationWrapper 
                 key={index} 
                 delay={index * 200}
-                animation="bounce-in"
+                animation="fade-up"
                 resetOnScroll={true}
               >
-                <div className={`card-elegant text-center group hover-float animate-box-reveal`} style={{ animationDelay: `${index * 0.15}s` }}>
-                  <div className="mb-6 flex justify-center animate-zoom-bounce group-hover:scale-110 transition-transform duration-300" style={{ animationDelay: `${index * 0.2}s` }}>
+                <div className="card-elegant text-center group hover-float">
+                  <div className="mb-6 flex justify-center group-hover:scale-110 transition-transform duration-300">
                     {feature.icon}
                   </div>
-                  <h3 className="text-xl font-semibold mb-4 animate-slide-up" style={{ animationDelay: `${index * 0.25}s` }}>{feature.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed animate-fade-in-up" style={{ animationDelay: `${index * 0.3}s` }}>
+                  <h3 className="text-xl font-semibold mb-4">{feature.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">
                     {feature.description}
                   </p>
                 </div>
